@@ -1,14 +1,22 @@
 <!doctype html>
+<!--
+	(c) Copyright 2017 ZengZhiXiang. All Rights Reserved. 
+	2017-08-11
+-->
 <html lang="zh-CN">
 
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="author" content="ZengZhiXiang" />
+		<meta name="generator" content="HBuilder" />
+		<meta name="keywords" content="简历,html工程师,前端工程师,曾志翔" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title>个人主页</title>
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 		<link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.css" />
-		<link rel="stylesheet" type="text/css" href="css/animate.min.css" />
+		<!--<link rel="stylesheet" type="text/css" href="css/animate.min.css" />-->
+		<link rel="stylesheet" type="text/css" href="css/animate.css" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/swiper.jquery-3.4.2.js" type="text/javascript" charset="utf-8"></script>
@@ -22,6 +30,11 @@
 				font-family: "微软雅黑", "Helvetica Neue", Helvetica, Arial, sans-serif;
 			}
 			
+			ul {
+				padding: 0;
+				list-style: none;
+			}
+			
 			#swiper0 {
 				height: 100%;
 				background-color: #ddd;
@@ -31,10 +44,11 @@
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
-				/*align-items: center;*/
+				align-items: center;
 				padding: 50px;
 				overflow: hidden;
 				background-size: cover;
+				background-position: center;
 			}
 			
 			.box {
@@ -42,8 +56,9 @@
 				position: relative;
 				/*text-align: center;*/
 				/*font-size: 1.5em;*/
-				/*max-width: 100%;*/
+				max-width: 970px;
 				width: 100%;
+				.
 			}
 			
 			.icon {
@@ -78,6 +93,7 @@
 				color: white;
 				font-size: 20px;
 				background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+				animation: spread 1.5s cubic-bezier(0.18, 0.89, 0.32, 1.28), wobble 1.5s;
 			}
 			
 			#swiper0>.swiper-pagination>.swiper-pagination-bullet:after {
@@ -109,7 +125,7 @@
 			}
 			
 			#swiper0>.swiper-wrapper {
-				background-image: linear-gradient(120deg, #cfcfcf 0%, #E0F7FA 100%);
+				/*background-image: linear-gradient(120deg, #cfcfcf 0%, #E0F7FA 100%);*/
 				padding: 0;
 			}
 			
@@ -188,55 +204,6 @@
 				margin: 0 3px;
 			}
 			
-			.Dbox {
-				height: 200px;
-				/*background-color: #eee;*/
-				position: relative;
-				perspective: 600px;
-			}
-			
-			.Dbox>ul {
-				/*background-color: #eee;*/
-				list-style: none;
-				padding: 0;
-				position: absolute;
-				width: 200px;
-				height: 200px;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				transform-style: preserve-3d;
-				transform: translate(-50%, -50%)rotateX(45deg)rotateY(45deg)rotateZ(45deg);
-				animation: myfirst 5s infinite linear;
-			}
-			
-			.Dbox>ul:hover {
-				animation-play-state: paused;
-			}
-			
-			.Dbox>ul>li:hover {
-				color: salmon;
-			}
-			
-			@keyframes myfirst {
-				from {
-					transform: translate(-50%, -50%)rotateX(0deg)rotateY(0deg)rotateZ(0deg);
-				}
-				to {
-					transform: translate(-50%, -50%)rotateX(0deg)rotateY(360deg)rotateZ(0deg);
-				}
-			}
-			
-			.Dbox>ul>li {
-				position: absolute;
-				/*width: 100%;*/
-				/*height: 100%;*/
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				backface-visibility: hidden;
-			}
-			
 			#swiper0>.swiper-wrapper>.swiper-slide:nth-of-type(2) {
 				background-image: url(img/Background/00.jpg);
 			}
@@ -265,6 +232,10 @@
 				background-image: url(img/Background/06.jpg);
 			}
 			
+			#swiper0>.swiper-wrapper>.swiper-slide:nth-of-type(9) {
+				background-image: url(img/Background/07.jpg);
+			}
+			
 			.working-time {
 				color: #84fab0;
 				position: absolute;
@@ -280,6 +251,7 @@
 			.working-time.stop {
 				top: initial;
 				bottom: 0;
+				color: #8fd3f4;
 			}
 			
 			.working-list {
@@ -294,7 +266,8 @@
 				margin-bottom: 1em;
 				margin-right: .5em;
 				border-radius: .5em;
-				background-color: rgba(255, 255, 255, .1);
+				background-color: rgba(255, 255, 255, .2);
+				background-image: linear-gradient(120deg, rgba(132, 250, 176, 0.2) 0%, rgba(143, 211, 244, 0.2) 100%);
 			}
 			
 			.working-list>li:after {
@@ -305,6 +278,7 @@
 				height: 100%;
 				width: 5px;
 				background-color: #84fab0;
+				background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
 			}
 			
 			.company {
@@ -324,9 +298,67 @@
 				content: '<';
 			}
 			
+			.skill-list {
+				padding: 0;
+			}
+			
+			.skill-list>li {
+				display: flex;
+				align-items: center;
+				margin-bottom: 1em;
+			}
+			
+			.skill-list>li>* {
+				margin: 0;
+			}
+			
+			.skill-list>li>.skill-name {
+				width: 5em;
+			}
+			
+			.skill-list>li>.progress {
+				flex-grow: 1;
+			}
+			
+			.skill-list>li>.progress>.progress-bar {
+				transition: width 3s;
+			}
+			
+			.swiper-slide:not(.swiper-slide-active) .skill-list>li>.progress>.progress-bar {
+				width: 0 !important;
+				transition: width 0s;
+			}
+			
+			#experience-swiper {
+				height: 200px;
+			}
+			
+			#experience-swiper>.swiper-wrapper>.swiper-slide {
+				background-color: #eee;
+				width: 200px;
+			}
+			
+			#experience-swiper>.swiper-pagination>.swiper-pagination-bullet-active {
+				background: #84fab0;
+				background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+				animation: spread 1.5s cubic-bezier(0.18, 0.89, 0.32, 1.28), bounce 1s;
+			}
+			
+			@keyframes spread {
+				0% {
+					box-shadow: 0 0 0 0px rgba(143, 211, 244, 1);
+				}
+				100% {
+					box-shadow: 0 0 0 10px rgba(143, 211, 244, 0);
+				}
+			}
+			
 			@media (min-width: 767px) {
 				body {
 					font-size: 2em;
+				}
+				.working-list {
+					padding-right: 7em;
 				}
 			}
 		</style>
@@ -400,22 +432,70 @@
 				</li>
 				<li class="swiper-slide slide-skill" data-name="技能栈" data-icon="daima">
 					<div class="box container-fluid">
-						<div class="row ani">
-							<div class="Dbox col-sm-3">
-								<ul>
-
-								</ul>
-							</div>
-							<div class="col-sm-9">
-								123
-							</div>
-						</div>
+						<ul class="row  skill-list">
+							<li class="col-sm-6 col-md-4 ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s" swiper-animate-delay="0s">
+								<p class="skill-name">HTML5</p>
+								<div class="progress">
+									<div style="width: 85%" class="progress-bar progress-bar-info progress-bar-striped active">
+										<span>熟练</span>
+									</div>
+								</div>
+							</li>
+							<li class="col-sm-6 col-md-4 ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s" swiper-animate-delay="0.1s">
+								<p class="skill-name">CSS3</p>
+								<div class="progress">
+									<div style="width: 90%" class="progress-bar progress-bar-info progress-bar-striped active">
+										<span>熟练</span>
+									</div>
+								</div>
+							</li>
+							<li class="col-sm-6 col-md-4 ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s" swiper-animate-delay="0.2s">
+								<p class="skill-name">SCSS</p>
+								<div class="progress">
+									<div style="width: 70%" class="progress-bar progress-bar-info progress-bar-striped active">
+										<span>熟练</span>
+									</div>
+								</div>
+							</li>
+							<li class="col-sm-6 col-md-4 ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s" swiper-animate-delay="0.3s">
+								<p class="skill-name">javascript</p>
+								<div class="progress">
+									<div style="width: 85%" class="progress-bar progress-bar-info progress-bar-striped active">
+										<span>熟练</span>
+									</div>
+								</div>
+							</li>
+							<li class="col-sm-6 col-md-4 ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s" swiper-animate-delay="0.4s">
+								<p class="skill-name">jQuery.js</p>
+								<div class="progress">
+									<div style="width: 80%" class="progress-bar progress-bar-info progress-bar-striped active">
+										<span>熟练</span>
+									</div>
+								</div>
+							</li>
+							<li class="col-sm-6 col-md-4 ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s" swiper-animate-delay="0.5s">
+								<p class="skill-name">Vue.js</p>
+								<div class="progress">
+									<div style="width: 30%" class="progress-bar progress-bar-info progress-bar-striped active">
+										<span>了解</span>
+									</div>
+								</div>
+							</li>
+							<li class="col-sm-6 col-md-4 ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s" swiper-animate-delay="0.6s">
+								<p class="skill-name">nodejs</p>
+								<div class="progress">
+									<div style="width: 20%" class="progress-bar progress-bar-info progress-bar-striped active">
+										<span>了解</span>
+									</div>
+								</div>
+							</li>
+						</ul>
 					</div>
 				</li>
 				<li class="swiper-slide slide-skill" data-name="工作经历" data-icon="gongzuojingli">
 					<div class="box">
 						<ul class="working-list">
-							<li>
+							<li class="ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s" swiper-animate-delay="0s">
 								<p class="start working-time"><span>2012年</span><span>7月</span></p>
 								<p class="company">
 									<a href="//www.okserver.com.cn/">深圳市欧科速通网络技术有限公司</a>
@@ -424,7 +504,7 @@
 								<p>负责服务器的安装与配置以及后续的维护工作。</p>
 								<p class="stop working-time"><span>2013年</span><span>7月</span></p>
 							</li>
-							<li>
+							<li class="ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s" swiper-animate-delay="0.2s">
 								<p class="start working-time"><span>2016年</span><span>4月</span></p>
 								<p class="company">
 									<a href="//www.didi365.com">深圳市点嘀互联网络有限公司</a>
@@ -437,12 +517,23 @@
 					</div>
 				</li>
 				<li class="swiper-slide slide-experience" data-name="作品集" data-icon="github-copy">
-					<div class="box">作品集</div>
+					<div class="box">
+						<div class="swiper-container ani" id="experience-swiper" swiper-animate-effect="bounceIn" swiper-animate-duration="0.3s" swiper-animate-delay="0s">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">作品未实装</div>
+								<div class="swiper-slide">作品未实装</div>
+								<div class="swiper-slide">作品未实装</div>
+								<div class="swiper-slide">作品未实装</div>
+								<div class="swiper-slide">作品未实装</div>
+							</div>
+							<ul class="swiper-pagination"></ul>
+						</div>
+					</div>
 				</li>
 				<li class="swiper-slide slide-education" data-name="学历" data-icon="xueli">
 					<div class="box">
 						<ul class="working-list">
-							<li>
+							<li class="ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s" swiper-animate-delay="0s">
 								<p class="start working-time"><span>2013年</span><span>9月</span></p>
 								<p class="company">
 									<a href="//www.nhic.edu.cn">民办南华工商学院</a>
@@ -454,28 +545,156 @@
 						</ul>
 					</div>
 				</li>
-				<li class="swiper-slide slide-email" data-name="联系我" data-icon="icon-mail">
-					<div class="box">联系我</div>
+				<li class="swiper-slide slide-other" data-name="项目经验" data-icon="xiangmu">
+					<div class="box">
+						<ul>
+							<li>项目经验01</li>
+							<li>项目经验02</li>
+							<li>项目经验03</li>
+							<li>项目经验04</li>
+						</ul>
+					</div>
 				</li>
-				<li class="swiper-slide slide-other" data-name="其它" data-icon="qita">
-					<div class="box">其它</div>
+				<li class="swiper-slide slide-contact" data-name="联系我" data-icon="icon-mail">
+					<div class="box container-fluid">
+						<ul class="row contact-list">
+							<li class="col-sm-4">
+								<div class="onhover contact-li">
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="#icon-icon-mail"></use>
+									</svg>
+									<span>email</span>
+									<a href="mailto:969871721@qq.com">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="#icon-dianji"></use>
+										</svg>
+										<span>969871721@qq.com</span>
+									</a>
+								</div>
+							</li>
+							<li class="col-sm-4">
+								<div class="onhover contact-li">
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="#icon-qq-line"></use>
+									</svg>
+									<span>qq</span>
+									<a href="//wpa.qq.com/msgrd?uin=969871721">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="#icon-dianji"></use>
+										</svg>
+										<span>969871721</span>
+									</a>
+								</div>
+							</li>
+							<li class="col-sm-4">
+								<div class="onhover contact-li">
+									<svg class="icon" aria-hidden="true">
+										<use xlink:href="#icon-dianhua"></use>
+									</svg>
+									<span>Phone</span>
+									<a href="tel:13650830957">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="#icon-dianji"></use>
+										</svg>
+										<span>13650830957</span>
+									</a>
+								</div>
+							</li>
+						</ul>
+						<style type="text/css">
+							.contact-list>li {
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								margin-bottom: 1em;
+							}
+							
+							.contact-list>li>div {
+								background-color: rgba(255, 255, 255, .2);
+								width: 10em;
+								height: 10em;
+								border-radius: 50%;
+								background-image: linear-gradient(120deg, rgba(132, 250, 176, .2) 0%, rgba(143, 211, 244, .2) 100%);
+								box-shadow: 0px 0px 70px #111;
+								display: flex;
+								flex-direction: column;
+								justify-content: center;
+								align-items: center;
+								padding: 2em;
+								cursor: pointer;
+								position: relative;
+							}
+							
+							.contact-list>li>div>.icon {
+								font-size: 5em;
+							}
+							
+							.contact-list>li>div>a {
+								display: none;
+								flex-direction: column;
+								justify-content: center;
+								align-items: center;
+								position: absolute;
+								top: 0;
+								left: 0;
+								background-color: rgba(255, 255, 255, .5);
+								width: 100%;
+								height: 100%;
+								border-radius: 50%;
+							}
+							
+							.contact-list>li>div>a>.icon {
+								font-size: 5em;
+							}
+							
+							.contact-list>li>div.hover>a {
+								display: flex;
+							}
+							
+							.contact-list>li>div.hover {
+								animation: jello 1s;
+							}
+							/*.contact-list>li>div.hover:after {
+								content: "\e602";
+								position: absolute;
+								top: 0;
+								left: 0;
+								background-color: rgba(255, 255, 255, .5);
+								width: 100%;
+								height: 100%;
+								border-radius: 50%;
+								font-family: "iconfont";
+								font-size: 5em;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+							}*/
+						</style>
+						<link rel="stylesheet" type="text/css" href="fonts/iconfont.css" />
+					</div>
+				</li>
+				<li class="swiper-slide slide-other" data-name="其他" data-icon="qita">
+					<div class="box">
+						<p>其他</p>
+					</div>
 				</li>
 			</ul>
 			<ul class="swiper-pagination"></ul>
 		</div>
 
 		<script type="text/template" id="template-pagination">
-			<li data-name="{{=it.name}}" class="{{=it.className}}">
+			<li data-name="{{=it.name}}" class="{{=it.className}} onhover">
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#icon-{{=it.icon}}"></use>
 				</svg>
 			</li>
 		</script>
 		<script type="text/javascript">
-			var swiper0 = new Swiper('.swiper-container', {
+			//主体的Swiper
+			var swiper0 = new Swiper('#swiper0', {
 				direction: 'vertical',
 				watchSlidesProgress: true,
-				pagination: '.swiper-pagination',
+				pagination: '#swiper0>.swiper-pagination',
 				paginationType: 'bullets',
 				paginationClickable: true,
 				paginationBulletRender: function(swiper, index, className) {
@@ -527,19 +746,85 @@
 				},
 			});
 
-			$('#swiper0>.swiper-pagination').on('mouseenter', '.swiper-pagination-bullet', function(event) {
+			//作品集的Swiper
+			var experienceSwiper = new Swiper('#experience-swiper', {
+				effect: 'coverflow',
+				pagination: '#experience-swiper>.swiper-pagination',
+				//				paginationClickable: true,
+				centeredSlides: true,
+				loop: true,
+				grabCursor: true,
+				slidesPerView: 5,
+				slideToClickedSlide: true,
+				coverflow: {
+					rotate: 25,
+					stretch: 0,
+					depth: 100,
+					modifier: 1,
+					slideShadows: true
+				},
+				breakpoints: { //响应式
+					768: {
+						slidesPerView: 1,
+						coverflow: {
+							rotate: 10,
+							stretch: 0,
+							depth: 100,
+							modifier: 1,
+							slideShadows: true
+						},
+					},
+					992: {
+						slidesPerView: 3,
+						coverflow: {
+							rotate: 50,
+							stretch: 0,
+							depth: 100,
+							modifier: 1,
+							slideShadows: true
+						},
+					},
+					1200: {
+						slidesPerView: 5,
+						coverflow: {
+							rotate: 25,
+							stretch: 0,
+							depth: 100,
+							modifier: 1,
+							slideShadows: true
+						},
+					},
+				},
+
+			});
+
+			//模拟hover避免移动端一直点击后一直处于hover伪类状态，改使用.hover类名控制。
+			//navigator.userAgent.match(/AppleWebKit.*Mobile.*/)
+			$(document).on('mouseenter', '.onhover', function() {
+				setTimeout(function() {
 					$(this).addClass('hover');
 					$(this).data('removehover', setTimeout(function() {
+						//1秒后移除hover
 						$(this).removeClass('hover');
-					}.bind(this), 1000));
-				})
-				.on('mouseleave', '.swiper-pagination-bullet', function(event) {
-					clearTimeout($(this).data('removehover'));
-					$(this).removeClass('hover');
-				});
+					}.bind(this), 2000));
+				}.bind(this), 0);
+			}).on('mouseleave', '.onhover', function(event) {
+				clearTimeout($(this).data('removehover'));
+				$(this).removeClass('hover');
+			});
+
+			//			if(navigator.userAgent.match(/AppleWebKit.*Mobile.*/)) {
+
+			$(document).on('click', '.onhover', function() {
+				$(this).trigger('mouseenter');
+			})
+
+			//			}
 		</script>
 		<script src="js/wowslider.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/script.js" type="text/javascript" charset="utf-8"></script>
 	</body>
+	<script type="text/javascript">
+	</script>
 
 </html>
