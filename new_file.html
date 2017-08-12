@@ -5,23 +5,60 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title>Document</title>
-
+		<style type="text/css">
+			div {
+				width: 200px;
+				height: 200px;
+				-webkit-animation: spread 1s infinite;
+				-o-animation: spread 1s infinite;
+				-moz-animation: spread 1s infinite;
+				animation: spread 1s infinite;
+				background-color: salmon;
+			}
+			
+			@-webkit-keyframes speread {
+				0% {
+					transform: rotateY(0deg);
+				}
+				100% {
+					transform: rotateY(360deg);
+				}
+			}
+			
+			@-o-keyframes speread {
+				0% {
+					transform: rotateY(0deg);
+				}
+				100% {
+					transform: rotateY(360deg);
+				}
+			}
+			
+			@-moz-keyframes speread {
+				0% {
+					transform: rotateY(0deg);
+				}
+				100% {
+					transform: rotateY(360deg);
+				}
+			}
+			
+			@keyframes speread {
+				0% {
+					transform: rotateY(0deg);
+				}
+				100% {
+					transform: rotateY(360deg);
+				}
+			}
+		</style>
 	</head>
 
 	<body>
-		<script type="text/javascript">
-			var a, b, c;
-			console.time('用时');
-			for(a = 0; a < 1000; a++) {
-				for(b = 0; b < 1000 - a; b++) {
-					c = 1000 - a - b;
-					if(a * a + b * b == c * c) {
-						console.log(a, b, c);
-					};
-				}
-			}
-			console.timeEnd('用时');
-		</script>
+		<div>
+
+		</div>
+
 	</body>
 
 </html>
