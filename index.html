@@ -1,7 +1,7 @@
 <!doctype html>
 <!--
 	(c) Copyright 2017 ZengZhiXiang. All Rights Reserved. 
-	2017-08-11
+	2017-08-15
 -->
 <html lang="zh-CN">
 
@@ -106,7 +106,7 @@
 							<li class="col-sm-6 col-md-4 ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s" swiper-animate-delay="0s">
 								<p class="skill-name">HTML5</p>
 								<div class="progress">
-									<div style="width: 85%" class="progress-bar progress-bar-info progress-bar-striped active">
+									<div style="width: 75%" class="progress-bar progress-bar-info progress-bar-striped active">
 										<span>熟练</span>
 									</div>
 								</div>
@@ -114,13 +114,13 @@
 							<li class="col-sm-6 col-md-4 ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s" swiper-animate-delay="0.1s">
 								<p class="skill-name">CSS3</p>
 								<div class="progress">
-									<div style="width: 90%" class="progress-bar progress-bar-info progress-bar-striped active">
+									<div style="width: 80%" class="progress-bar progress-bar-info progress-bar-striped active">
 										<span>熟练</span>
 									</div>
 								</div>
 							</li>
 							<li class="col-sm-6 col-md-4 ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s" swiper-animate-delay="0.2s">
-								<p class="skill-name">SCSS</p>
+								<p class="skill-name">LESS</p>
 								<div class="progress">
 									<div style="width: 70%" class="progress-bar progress-bar-info progress-bar-striped active">
 										<span>熟练</span>
@@ -130,15 +130,15 @@
 							<li class="col-sm-6 col-md-4 ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s" swiper-animate-delay="0.3s">
 								<p class="skill-name">javascript</p>
 								<div class="progress">
-									<div style="width: 85%" class="progress-bar progress-bar-info progress-bar-striped active">
-										<span>熟练</span>
+									<div style="width: 50%" class="progress-bar progress-bar-info progress-bar-striped active">
+										<span>熟悉</span>
 									</div>
 								</div>
 							</li>
 							<li class="col-sm-6 col-md-4 ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s" swiper-animate-delay="0.4s">
 								<p class="skill-name">jQuery.js</p>
 								<div class="progress">
-									<div style="width: 80%" class="progress-bar progress-bar-info progress-bar-striped active">
+									<div style="width: 70%" class="progress-bar progress-bar-info progress-bar-striped active">
 										<span>熟练</span>
 									</div>
 								</div>
@@ -146,7 +146,7 @@
 							<li class="col-sm-6 col-md-4 ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s" swiper-animate-delay="0.5s">
 								<p class="skill-name">Vue.js</p>
 								<div class="progress">
-									<div style="width: 30%" class="progress-bar progress-bar-info progress-bar-striped active">
+									<div style="width: 20%" class="progress-bar progress-bar-info progress-bar-striped active">
 										<span>了解</span>
 									</div>
 								</div>
@@ -154,7 +154,7 @@
 							<li class="col-sm-6 col-md-4 ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s" swiper-animate-delay="0.6s">
 								<p class="skill-name">nodejs</p>
 								<div class="progress">
-									<div style="width: 20%" class="progress-bar progress-bar-info progress-bar-striped active">
+									<div style="width: 10%" class="progress-bar progress-bar-info progress-bar-striped active">
 										<span>了解</span>
 									</div>
 								</div>
@@ -190,7 +190,14 @@
 					<div class="box">
 						<div class="swiper-container ani" id="experience-swiper" swiper-animate-effect="bounceIn" swiper-animate-duration="0.3s" swiper-animate-delay="0s">
 							<div class="swiper-wrapper">
-								<div class="swiper-slide">作品未实装</div>
+								<div class="swiper-slide" style="background-image: url(img/experience/swiper_pullRefresh.png);">
+									<p>使用swiper实现下拉刷新</p>
+									<p data-toggle="modal" data-phone="true" data-target="#experience-modal" data-src="//zzx18023.github.io/swiper_pullRefresh/new_file.html#slide2" data-title="swiper_pullRefresh" data-introduce="使用swiper实现下拉刷新,支持单页面初始化多个。因swiper未提供扩展开发接口，故使用代理初始化的方式进行初始化刷新组件">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="#icon-chakan"></use>
+										</svg>
+									</p>
+								</div>
 								<div class="swiper-slide">作品未实装</div>
 								<div class="swiper-slide">作品未实装</div>
 								<div class="swiper-slide">作品未实装</div>
@@ -217,15 +224,40 @@
 				</li>
 				<li class="swiper-slide slide-other" data-name="项目经验" data-icon="xiangmu">
 					<div class="box container-fluid">
-						<ul class="row" style="display: none;">
-							<li class="col-sm-4">
-								神马集市
+						<ul class="row other-list" style="">
+							<li class="col-sm-6 ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s" swiper-animate-delay="0s">
+								<div style="background-image: url(img/experience/didi365.png);">
+									<p>神马集市</p>
+									<p data-phone="true" data-toggle="modal" data-target="#experience-modal" data-src="//www.didi365.com/web/wechat/mall-home.html" data-title="神马集市" data-introduce="
+										<p>神马滴滴APP与微信公众号内的商城，主要使用jQuery.js与mui框架搭建。</p>
+										<p>数据均采用jsonAjax异步加载。</p>
+										<p>在该项目中我主要负责商品列表展示和商品详情等页面开发，主要使用了mui的下拉刷新与上拉加载实现分页请求json数据。</p>
+										<p>因浏览器缓存的原因无法获取到最新的服务端文件，在文件更新后使用Gulp生成版本号，采用index.js?v=xxxxxx的形式进行请求。</p>
+										<p>图片实现懒加载。</p>
+										">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="#icon-chakan"></use>
+										</svg>
+									</p>
+								</div>
 							</li>
-							<li class="col-sm-4">
-								智慧车间
-							</li>
-							<li class="col-sm-4">
-								嘀嘀店通
+							<li class="col-sm-6 ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s" swiper-animate-delay="0.2s">
+								<div style="background-image: url(img/experience/ddstore.png);">
+									<p>智慧车间</p>
+									<p data-phone="false" data-toggle="modal" data-target="#experience-modal" data-src="//ddstore.didi365.com/brandstore/index/login" data-title="智慧车间" data-introduce="
+										<p>智慧车间主要是4s店的流程管理和线上商城以及svip服务。</p>	
+										<p>主要使用Hui进行响应式页面开发。</p>
+										<p>我在项目中主要负责后台系统的整体UI统一与协助后台人员调整css样式。</p>
+										<p>在开发过程中因需实现切换主题色，但以往开发的页面并没有按照统一UI进行开发。</p>
+										<p>最后解决方法分为两个，对公共组件使用LESS编写，编译成多套颜色的CSS文件，通过切换css文件实现主题色切换，</p>
+										<p>但有一些页面使用的组件仅在当前页使用，如若全部抽取为公共组件则会使公共组件过于庞大，故而再添加了方法二.</p>
+										<p>因后台页面使用的是thinkphp开发，于是在页面单独使用的样式中使用了php变量，通过变量色值切换的形式实现主题色更改</p>
+										">
+										<svg class="icon" aria-hidden="true">
+											<use xlink:href="#icon-chakan"></use>
+										</svg>
+									</p>
+								</div>
 							</li>
 						</ul>
 					</div>
@@ -279,18 +311,35 @@
 						<link rel="stylesheet" type="text/css" href="fonts/iconfont.css" />
 					</div>
 				</li>
-				<li class="swiper-slide slide-other" data-name="其他" data-icon="qita">
+				<!--<li class="swiper-slide slide-other" data-name="其他" data-icon="qita" style="display: none;">
 					<div class="box">
-						<!--<div id="uyan_frame"></div>
-						<script type="text/javascript">
-							var uyan_config = {
-							};
-						</script>
-						<script type="text/javascript" src="//v2.uyan.cc/code/uyan.js?uid=2141421"></script>-->
+						其他
 					</div>
-				</li>
+				</li>-->
 			</ul>
 			<ul class="swiper-pagination"></ul>
+		</div>
+
+		<!-- Modal -->
+		<div class="modal fade" id="experience-modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Modal title</h4>
+					</div>
+					<div class="modal-body">
+						<div class="introduce"></div>
+						<div class="iframe">
+							<iframe></iframe>
+						</div>
+					</div>
+					<!--<div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>-->
+				</div>
+			</div>
 		</div>
 
 		<script type="text/template" id="template-pagination">

@@ -103,7 +103,6 @@ var experienceSwiper = new Swiper('#experience-swiper', {
 			},
 		},
 	},
-
 });
 
 //模拟hover避免移动端一直点击后一直处于hover伪类状态，改使用.hover类名控制。
@@ -128,3 +127,35 @@ $(document).on('click', '.onhover', function() {
 })
 
 //			}
+
+//作品弹窗填充数据
+$('#experience-modal').on('shown.bs.modal', function(event) {
+//	console.log(event);
+	var button = $(event.relatedTarget);
+	var title = button.data('title');
+	var src = button.data('src');
+	var introduce = button.data('introduce');
+	var modal = $(this);
+	var modal_body = modal.find('.modal-body');
+	var modal_title = modal.find('.modal-title');
+
+	modal_title.html(title);
+	modal_body.find('.iframe>iframe').prop('src', src);
+	modal_body.find('.introduce').html(introduce);
+
+	//保证iframe能在一屏显示，使用iPhone5的屏幕比例320:568。
+	var aspectRatio = modal_body.width()/modal_body.height();
+	console.log(modal_body.width(),modal_body.height(),aspectRatio,320/568);
+	if(button.data('phone')) {
+		modal.find('.modal-body>.iframe').addClass('phone');
+		if(aspectRatio > 320/568) {
+			modal.find('.modal-body>.iframe').addClass('h');
+		} else {
+			modal.find('.modal-body>.iframe').removeClass('h');
+		};
+	} else {
+		modal.find('.modal-body>.iframe').removeClass('phone');
+		modal.find('.modal-body>.iframe').removeClass('h');
+	}
+	modal_body.scrollTop(0);
+});
