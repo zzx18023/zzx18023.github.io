@@ -60,7 +60,7 @@ var experienceSwiper = new Swiper('#experience-swiper', {
 	pagination: '#experience-swiper>.swiper-pagination',
 	//				paginationClickable: true,
 	centeredSlides: true,
-	loop: true,
+//	loop: true,
 	grabCursor: true,
 	slidesPerView: 5,
 	slideToClickedSlide: true,
