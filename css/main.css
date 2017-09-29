@@ -1938,7 +1938,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #7e4fc9;
+  background: #344985;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2804,8 +2804,8 @@ embed {
 .page-post-detail .post+.post {
   margin-top: 1em;
 }
-#c_n17,
-#c_n14 {
+#c_n13,
+.container {
   background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
 }
 .brand {
@@ -2867,4 +2867,12 @@ embed {
 }
 .posts-expand .post-tags a:hover:after {
   background: #fff;
+}
+.page-post-detail #posts .post-body img {
+  max-height: 400px;
+}
+@media (max-width: 767px) {
+  .page-post-detail #posts .post-body img {
+    max-height: 200px;
+  }
 }
