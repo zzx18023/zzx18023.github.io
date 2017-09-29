@@ -1938,7 +1938,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #344985;
+  background: #f7ff0b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2875,4 +2875,8 @@ embed {
   .page-post-detail #posts .post-body img {
     max-height: 200px;
   }
+}
+code {
+  background-image: linear-gradient(150deg, #e3fdf5 0%, #ffe6fa 100%);
+  border: 1px solid #e0e0e0;
 }
