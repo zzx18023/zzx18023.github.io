@@ -1938,7 +1938,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff9dff;
+  background: #ff7;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2882,4 +2882,10 @@ code {
 }
 #SOHU_MAIN .module-mobile-cmt-header {
   background-color: transparent !important;
+}
+#SOHU_MAIN .module-mobile-cmt-header .comment-textarea .comment-input {
+  background-color: transparent !important;
+}
+#SOHU_MAIN .module-mobile-cmt-list .list-wrapper-wap .list-container-wap .list-build-wap .floor-item-wap {
+  background-color: rgba(245,245,245,0.5) !important;
 }
