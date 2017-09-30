@@ -1938,7 +1938,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4717ff;
+  background: #ff9d9d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2879,4 +2879,7 @@ embed {
 code {
   background-image: linear-gradient(150deg, #e3fdf5 0%, #ffe6fa 100%);
   border: 1px solid #e0e0e0;
+}
+#SOHU_MAIN .module-mobile-cmt-header {
+  background-color: transparent !important;
 }
