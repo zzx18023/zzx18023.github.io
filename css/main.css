@@ -1938,7 +1938,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff9d9d;
+  background: #ff61ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2806,7 +2806,7 @@ embed {
 }
 #c_n13,
 .container {
-  background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+  background-image: linear-gradient(135deg, #e3fdf5 0%, #ffe6fa 100%);
 }
 .brand {
   background-color: initial;
@@ -2814,7 +2814,7 @@ embed {
 .site-title {
   -webkit-background-clip: text;
   color: transparent;
-  background-image: linear-gradient(-225deg, #9bffe0 0%, #ffb4f0 100%);
+  background-image: linear-gradient(135deg, #9bffe0 0%, #ffb4f0 100%);
   font-size: 40px;
   line-height: 60px;
 }
