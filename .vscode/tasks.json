@@ -6,31 +6,36 @@
     {
       "type": "npm",
       "script": "lint",
-      "problemMatcher": [
-        "$eslint-compact"
-      ]
+      "problemMatcher": ["$eslint-compact"]
     },
     {
       "type": "npm",
       "script": "dev",
-      "problemMatcher": [
-        "$eslint-compact"
-      ]
+      "problemMatcher": ["$eslint-compact"]
     },
     {
       "type": "npm",
       "script": "build",
-      "problemMatcher": [
-        "$eslint-compact"
-      ],
-      "group": "build"
+      "problemMatcher": ["$eslint-compact"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
     },
     {
       "type": "npm",
       "script": "generate",
-      "problemMatcher": [
-        "$eslint-compact"
-      ]
+      "problemMatcher": ["$eslint-compact"]
+    },
+    {
+      "type": "npm",
+      "script": "install",
+      "problemMatcher": ["$eslint-compact"]
+    },
+    {
+      "type": "npm",
+      "script": "start",
+      "problemMatcher": ["$eslint-compact"]
     }
   ]
 }

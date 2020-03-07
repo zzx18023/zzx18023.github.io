@@ -35,5 +35,16 @@ export const mutations = {
         }
       });
   },
+  loadDocs(state) {
+    const docsContext = require.context('~/docs', false, /\.md$/);
+    const docsKeys = docsContext.keys();
+    const docs = docsKeys.map((src) => {
+      return Object.assign(docsContext(src), {
+        src,
+        fileName: /\.\/(.*)\.md$/.exec(src)[1],
+      });
+    });
+    this.commit('docs/setList', docs);
+  },
 };
 export const actions = {};
