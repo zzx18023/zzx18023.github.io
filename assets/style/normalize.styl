@@ -1,0 +1,85 @@
+// @import 'normalize.css'
+// @import 'animate.css'
+// @font-face
+// font-family 'STXinwei'
+// src url('../font/STXINWEI.TTF') format('truetype')
+// font-display swap
+
+// @font-face
+// font-family '华文新魏'
+// src url('../font/STXINWEI.TTF') format('truetype')
+// font-display swap
+// :root
+// --font-color #ddd
+// --primary #b2fefa
+// --secondary #0ed2f7
+// --dark #0052d4
+// --gradient-light #5d9eea
+// --gradient-middle #0f27b5
+// --gradient-dark #100e17
+// --code-gradient-light #cff0ff
+// --code-gradient-dark #afcafd
+::-webkit-scrollbar
+  width 10px
+  height 10px
+  // border-left 1px solid #201c29
+  background rgba(0, 0, 0, 0)
+
+::-webkit-scrollbar-thumb
+  border-radius 10px
+  background rgba(144, 147, 153, .5)
+  // background var(--primary) !important
+  // background -webkit-linear-gradient(var(--secondary), var(--dark)) !important
+  // background linear-gradient(var(--secondary), var(--dark)) !important
+  -webkit-box-shadow inset 0 0 6px rgba(0, 0, 0, .3)
+
+::-webkit-scrollbar-track
+  border-radius 10px
+  background rgba(0, 0, 0, 0)
+  // -webkit-box-shadow inset 0 0 6px rgba(0, 0, 0, .3)
+
+html
+  box-sizing border-box
+  // background-color #100e17
+  // color var(--font-color)
+  color #333
+  // white-space pre-wrap
+  word-wrap break-word
+  word-break break-word
+  font-size 16px
+  font-family '微软雅黑', Avenir, Helvetica, Arial, sans-serif
+  // user-select none // 禁止选择文本
+  -webkit-overflow-scrolling touch // 开启ios局部滚动惯性回弹
+  -webkit-tap-highlight-color transparent // ios 点击事件阴影颜色
+  -webkit-font-smoothing antialiased // Webkit 字体抗锯齿
+  -moz-osx-font-smoothing grayscale // Firefox 字体抗锯齿
+  -webkit-text-size-adjust none
+
+  // overflow-x hidden
+  *, *::after, *::before
+    box-sizing inherit
+
+button, input, textarea
+  color inherit
+  font inherit
+
+a
+  color inherit
+
+.page-enter-active
+  // position absolute
+  // top 0
+  // width 100vw
+  transition all .3s
+  transform-style preserve-3d
+  perspective 1000
+
+.page-enter
+  opacity 0
+  transform translateZ(0) translateY(-16px) scale(1)
+  will-change transform opacity
+
+.page-enter-to
+  opacity 1
+  transform translateZ(0) translateY(0) scale(1)
+  will-change transform opacity

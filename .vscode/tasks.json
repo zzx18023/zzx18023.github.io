@@ -6,7 +6,16 @@
     {
       "type": "npm",
       "script": "lint",
-      "problemMatcher": ["$eslint-compact"]
+      "problemMatcher": [
+        "$eslint-compact"
+      ]
+    },
+    {
+      "type": "npm",
+      "script": "dev",
+      "problemMatcher": [
+        "$eslint-compact"
+      ]
     }
   ]
 }
