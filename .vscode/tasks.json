@@ -6,7 +6,31 @@
     {
       "type": "npm",
       "script": "lint",
-      "problemMatcher": ["$eslint-compact"]
+      "problemMatcher": [
+        "$eslint-compact"
+      ]
+    },
+    {
+      "type": "npm",
+      "script": "dev",
+      "problemMatcher": [
+        "$eslint-compact"
+      ]
+    },
+    {
+      "type": "npm",
+      "script": "build",
+      "problemMatcher": [
+        "$eslint-compact"
+      ],
+      "group": "build"
+    },
+    {
+      "type": "npm",
+      "script": "generate",
+      "problemMatcher": [
+        "$eslint-compact"
+      ]
     }
   ]
 }
