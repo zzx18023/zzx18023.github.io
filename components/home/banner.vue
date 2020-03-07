@@ -1,62 +1,56 @@
 <template>
-  <div ref="bannerContainer" class="banner-container">
-    <div
-      ref="bannerWrapper"
-      class="banner-wrapper swiper-container"
-      :style="{
-        transform: `translateY(${-top}px)`,
-      }"
-    >
-      <div class="swiper-wrapper">
-        <div v-for="item in data" :key="item.fileName" class="swiper-slide">
-          <div
-            v-if="item.attributes.image"
-            class="slide-bg"
-            :style="{
-              backgroundImage: `url(${require(`~/assets/image/${item.attributes.image}`)})`,
-            }"
-          ></div>
-          <div class="slide-wrapper">
-            <div class="doc-title">
-              <nuxt-link
-                :to="{ name: 'slug', params: { slug: item.fileName } }"
-                >{{ item.attributes.title }}</nuxt-link
-              >
-            </div>
-            <div class="doc-description">
-              <span>{{ item.attributes.description }}</span>
-            </div>
-            <div class="doc-date">
-              <span
-                ><i class="iconfont icon-riqi"></i>「
-                {{ item.attributes.date | dateformat('mm月 dd, yyyy') }}
-                」</span
-              >
-            </div>
-            <!--  eslint-disable vue/no-v-html -->
-            <!-- <div
+  <div
+    ref="swiperContainer"
+    class="banner-wrapper swiper-container"
+    :style="{ height: height ? `${height}px` : null }"
+  >
+    <div class="swiper-wrapper">
+      <div v-for="item in data" :key="item.fileName" class="swiper-slide">
+        <div
+          v-if="item.attributes.image"
+          class="slide-bg"
+          :style="{
+            backgroundImage: `url(${require(`~/assets/image/${item.attributes.image}`)})`,
+          }"
+        ></div>
+        <div class="slide-wrapper">
+          <div class="doc-title">
+            <nuxt-link
+              :to="{ name: 'slug', params: { slug: item.fileName } }"
+              >{{ item.attributes.title }}</nuxt-link
+            >
+          </div>
+          <div class="doc-description">
+            <span>{{ item.attributes.description }}</span>
+          </div>
+          <div class="doc-date">
+            <span
+              ><i class="iconfont icon-riqi"></i>「
+              {{ item.attributes.date | dateformat('mm月 dd, yyyy') }}
+              」</span
+            >
+          </div>
+          <!--  eslint-disable vue/no-v-html -->
+          <!-- <div
               class="doc-preview"
               v-html="repairHTML(item.html.slice(0, 500))"
             ></div> -->
-            <HtmlView
-              class="doc-preview"
-              :html="item.html.slice(0, 500)"
-            ></HtmlView>
-            <!--  eslint-enable  -->
-            <div class="read-more">
-              <nuxt-link
-                :to="{ name: 'slug', params: { slug: item.fileName } }"
-              >
-                <span>查看全文 <i class="iconfont icon-jiantou-you"></i></span>
-              </nuxt-link>
-            </div>
+          <HtmlView
+            class="doc-preview"
+            :html="item.html.slice(0, 500)"
+          ></HtmlView>
+          <!--  eslint-enable  -->
+          <div class="read-more">
+            <nuxt-link :to="{ name: 'slug', params: { slug: item.fileName } }">
+              <span>查看全文 <i class="iconfont icon-jiantou-you"></i></span>
+            </nuxt-link>
           </div>
         </div>
       </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
     </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
   </div>
 </template>
 
@@ -81,23 +75,39 @@ export default {
   },
   data() {
     return {
-      top: 0,
+      height: 0,
     };
   },
   mounted() {
-    document.addEventListener('scroll', this.uptop, {
-      passive: true,
-    });
-    const mySwiper = this.initSwiper();
+    // document.addEventListener('scroll', this.uptop, {
+    //   passive: true,
+    // });
+    this.initSwiper();
 
-    this.$once('hook:beforeDestroy', function() {
-      document.removeEventListener('scroll', this.uptop);
-      mySwiper.destroy();
-    });
+    this.watchHeight();
+    // this.testSafari();
   },
   methods: {
+    watchHeight() {
+      const upHeight = () => {
+        this.height = window.innerHeight;
+      };
+      window.addEventListener('resize', upHeight, {
+        passive: true,
+      });
+      this.$once('hook:beforeDestroy', function() {
+        window.removeEventListener('resize', upHeight);
+      });
+      upHeight();
+    },
+    // testSafari() {
+    //   this.userAgent = navigator.vendor;
+    //   if (/Safari/.test(navigator.userAgent)) {
+    //     this.isSafari = true;
+    //   }
+    // },
     initSwiper() {
-      return new Swiper(this.$refs.bannerWrapper, {
+      const mySwiper = new Swiper(this.$refs.swiperContainer, {
         loop: true,
         // autoplay: {
         //   disableOnInteraction: false,
@@ -111,33 +121,51 @@ export default {
           prevEl: '.swiper-button-prev',
         },
       });
+      this.$once('hook:beforeDestroy', function() {
+        // document.removeEventListener('scroll', this.uptop);
+        mySwiper.destroy();
+      });
+      return mySwiper;
     },
-    uptop() {
-      this.top = this.$refs.bannerContainer.getBoundingClientRect().top;
-    },
+    // uptop() {
+    //   this.top = window.innerHeight;
+    // },
   },
 };
 </script>
 
 <style lang="stylus" scoped>
-.banner-container
-  position relative
-  z-index 0
-  overflow hidden
-  height 100vh
-  color #ddd
-  // background-color #100e17
-
+// .banner-container
+// // background-color #100e17
+// position sticky
+// top 0
+// // position relative
+// z-index -1
+// // overflow hidden
+// // height 100vh
+// color #ddd
+// // left 0
+// // right 0
+// height 100vh
 .banner-wrapper
-  position absolute
+  position sticky
   top 0
-  right 0
-  bottom 0
-  left 0
+  // z-index -1
+  // position absolute
+  // position sticky
+  overflow hidden
+  // right 0
+  // bottom 0
+  // left 0
+  // height 100vh
+  height 100vh
+  // height -webkit-fill-available
+  // width 100vw
   background-color #100e17
   // height 100%
   // background-image url('https://res.cloudinary.com/tridiamond/image/upload/v1572613799/blog/simplify-your-javascript-with_acr2px.jpg')
   background-size cover
+  color #ddd
   transform translateY(0)
 
 .swiper-container
@@ -202,8 +230,8 @@ export default {
       // overflow hidden
       margin 300px 300px 100px
       max-height calc(100% - 400px)
-      // height calc(100% - 400px)
 
+      // height calc(100% - 400px)
       @media screen and (max-width: 1024px)
         margin 200px 200px 100px
         max-height calc(100% - 300px)
@@ -261,12 +289,13 @@ export default {
       font-size 14px
 
     .doc-preview
-      width 80%
-      font-size 14px
-      line-height 2
       flex auto
       // overflow auto
       overflow hidden
+      width 80%
+      font-size 14px
+      line-height 2
+
       @media screen and (max-width: 425px)
         width 100%
 

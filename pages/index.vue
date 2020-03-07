@@ -172,16 +172,18 @@ export default {
     left 1920px
 
 .home-main-container
-  // margin-top -40px
-  // overflow hidden
   position relative
   z-index 1
+  // margin-top -40px
+  // overflow hidden
+  background-color #fff
 
   // margin-top -80px
   .home-main-wrapper
     margin auto
     max-width 1200px
-
+.card-wrapper
+  overflow hidden
 .doc-card
   margin 10px
 
