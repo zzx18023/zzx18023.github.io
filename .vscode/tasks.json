@@ -24,6 +24,13 @@
         "$eslint-compact"
       ],
       "group": "build"
+    },
+    {
+      "type": "npm",
+      "script": "generate",
+      "problemMatcher": [
+        "$eslint-compact"
+      ]
     }
   ]
 }
