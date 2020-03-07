@@ -42,10 +42,10 @@
             class="doc-preview"
             v-html="repairHTML(item.html.slice(0, 500))"
           ></div> -->
-            <HtmlView
+            <MarkdownView
               class="doc-preview"
-              :html="item.html.slice(0, 200)"
-            ></HtmlView>
+              :str="item.body.slice(0, 200)"
+            ></MarkdownView>
             <div class="doc-readMore">
               <nuxt-link
                 :to="{ name: 'slug', params: { slug: item.fileName } }"
@@ -66,11 +66,11 @@ import { Card } from 'element-ui';
 import dateFormat from 'dateformat';
 // import htmlScoped from '~/mixins/html-scoped';
 import hemoBanner from '~/components/home/banner';
-import HtmlView from '~/components/html-view';
+import MarkdownView from '~/components/markdown-view';
 
 export default {
   name: 'Home',
-  components: { hemoBanner, Card, HtmlView },
+  components: { hemoBanner, Card, MarkdownView },
   filters: { dateFormat },
   data() {
     return {

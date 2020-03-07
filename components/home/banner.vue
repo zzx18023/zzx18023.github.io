@@ -9,9 +9,10 @@
         <img
           v-if="item.attributes.image"
           class="slide-bg"
+          data-swiper-parallax="100%"
           :src="require(`~/assets/image/${item.attributes.image}`)"
         />
-        <div class="slide-wrapper">
+        <div class="slide-wrapper" data-swiper-parallax="100%">
           <div class="doc-title">
             <nuxt-link
               :to="{ name: 'slug', params: { slug: item.fileName } }"
@@ -33,10 +34,10 @@
               class="doc-preview"
               v-html="repairHTML(item.html.slice(0, 500))"
             ></div> -->
-          <HtmlView
+          <MarkdownView
             class="doc-preview"
-            :html="item.html.slice(0, 500)"
-          ></HtmlView>
+            :str="item.body.slice(0, 500)"
+          ></MarkdownView>
           <!--  eslint-enable  -->
           <div class="read-more">
             <nuxt-link :to="{ name: 'slug', params: { slug: item.fileName } }">
@@ -56,13 +57,13 @@
 import Swiper from 'swiper';
 import 'swiper/css/swiper.css';
 import dateformat from 'dateformat';
-import HtmlView from '~/components/html-view';
+import MarkdownView from '~/components/markdown-view';
 export default {
   name: 'HomeBanner',
   filters: {
     dateformat,
   },
-  components: { HtmlView },
+  components: { MarkdownView },
   props: {
     data: {
       type: Array,
@@ -110,6 +111,8 @@ export default {
         // autoplay: {
         //   disableOnInteraction: false,
         // },
+        parallax: true,
+        // spaceBetween: 10,
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
@@ -206,6 +209,10 @@ export default {
     // justify-content center
     // align-items center
     font-size 20px
+    overflow hidden
+    // border 1px solid #fff
+    // border-right 1px solid #fff
+    // width calc(100% - 1px)
 
     .slide-bg
       position absolute

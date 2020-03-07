@@ -27,20 +27,20 @@
     </div>
     <!-- eslint-disable-next-line vue/no-v-html -->
     <!-- <div class="doc-content line-numbers" v-html="doc.html"></div> -->
-    <HtmlView class="doc-content" :html="doc.html"></HtmlView>
+    <MarkdownView class="doc-content" :str="doc.body"></MarkdownView>
   </div>
 </template>
 
 <script>
 import dateformat from 'dateformat';
 // import htmlScoped from '~/mixins/html-scoped';
-import HtmlView from '~/components/html-view';
+import MarkdownView from '~/components/markdown-view';
 export default {
   name: 'Posts',
   filters: {
     dateformat,
   },
-  components: { HtmlView },
+  components: { MarkdownView },
   computed: {
     doc() {
       return this.$store.getters['docs/fileNameGetItem'](

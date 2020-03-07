@@ -126,7 +126,7 @@ export default {
           {
             loader: 'frontmatter-markdown-loader',
             options: {
-              // mode: ['html', 'body'],
+              mode: ['body'],
             },
           },
         ],
