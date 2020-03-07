@@ -6,13 +6,11 @@
   >
     <div class="swiper-wrapper">
       <div v-for="item in data" :key="item.fileName" class="swiper-slide">
-        <div
+        <img
           v-if="item.attributes.image"
           class="slide-bg"
-          :style="{
-            backgroundImage: `url(${require(`~/assets/image/${item.attributes.image}`)})`,
-          }"
-        ></div>
+          :src="require(`~/assets/image/${item.attributes.image}`)"
+        />
         <div class="slide-wrapper">
           <div class="doc-title">
             <nuxt-link
@@ -213,13 +211,16 @@ export default {
       position absolute
       top 0
       right 0
-      bottom 20%
-      left 20%
       z-index -1
+      // bottom 20%
+      // left 20%
+      width 80%
+      height 80%
       // width 100%
       // height 100%
-      background-position center
-      background-size cover
+      object-fit cover
+      // background-position center
+      // background-size cover
       -webkit-mask-image radial-gradient(ellipse closest-side, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0))
 
     .slide-wrapper

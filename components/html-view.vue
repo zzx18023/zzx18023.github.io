@@ -78,7 +78,7 @@ export default {
       top .8em
       right 1em
       z-index 3
-      color rgba(255,255,255,0.4)
+      color rgba(255, 255, 255, .4)
       font-size .75rem
 
     pre.language-js:before
@@ -98,4 +98,39 @@ export default {
 
     pre.language-stylus:before
       content 'stylus'
+
+    blockquote
+      margin-left 0
+      padding-left 14px
+      border-left 4px solid #ddd
+      color #666
+
+    table
+      margin 1em 0
+      border-collapse collapse
+
+      // border-spacing: 10px;
+      // display: block;
+      // width: 100%;
+      // overflow: auto;
+      // word-break: normal;
+      // word-break: keep-all
+      th
+        font-weight 700
+
+      th, td
+        padding 6px 13px
+        border 1px solid #ddd
+
+      thead
+        background-color #F8F8F8
+
+      tbody
+        tr:nth-child(2n)
+          background-color #F8F8F8
+
+    code
+      border 1px solid #ddd
+      border-radius 3px
+      background-color #f6f6f6
 </style>

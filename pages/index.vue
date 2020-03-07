@@ -181,11 +181,13 @@ export default {
   // margin-top -80px
   .home-main-wrapper
     margin auto
-    max-width 1200px
+    max-width 1024px
+
 .card-wrapper
   overflow hidden
+
 .doc-card
-  margin 10px
+  margin 16px 10px
 
   .zd-tag
     padding 2px
@@ -214,6 +216,7 @@ export default {
     color #999
 
   .doc-readMore
+    margin-top 1em
     // margin-left auto
     text-align right
 
