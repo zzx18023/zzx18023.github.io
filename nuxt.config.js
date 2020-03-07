@@ -145,4 +145,14 @@ export default {
       total: true,
     },
   },
+  generate: {
+    routes() {
+      const fs = require('fs');
+      const docs = fs.readdirSync('./docs');
+      const routes = docs.map((src) => {
+        return '/' + /(.*)\.md$/.exec(src)[1];
+      });
+      return routes;
+    },
+  },
 };
