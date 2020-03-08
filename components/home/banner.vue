@@ -5,7 +5,7 @@
     :style="{ height: height ? `${height}px` : null }"
   >
     <div class="swiper-wrapper">
-      <div v-for="item in data" :key="item.fileName" class="swiper-slide">
+      <div v-for="item in data" :key="item.id" class="swiper-slide">
         <img
           v-if="item.attributes.image"
           class="slide-bg"
@@ -14,10 +14,9 @@
         />
         <div class="slide-wrapper" data-swiper-parallax="100%">
           <div class="doc-title">
-            <nuxt-link
-              :to="{ name: 'slug', params: { slug: item.fileName } }"
-              >{{ item.attributes.title }}</nuxt-link
-            >
+            <nuxt-link :to="{ name: 'slug', params: { slug: item.id } }">{{
+              item.attributes.title
+            }}</nuxt-link>
           </div>
           <div class="doc-description">
             <span>{{ item.attributes.description }}</span>
@@ -40,7 +39,7 @@
           ></MarkdownView>
           <!--  eslint-enable  -->
           <div class="read-more">
-            <nuxt-link :to="{ name: 'slug', params: { slug: item.fileName } }">
+            <nuxt-link :to="{ name: 'slug', params: { slug: item.id } }">
               <span>查看全文 <i class="iconfont icon-jiantou-you"></i></span>
             </nuxt-link>
           </div>

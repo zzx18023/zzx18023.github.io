@@ -14,8 +14,7 @@
         <div class="card-wrapper">
           <Card
             v-for="item in docsList"
-            :key="item.fileName"
-            :data-key="item.fileName"
+            :key="item.id"
             class="doc-card"
             shadow="hover"
           >
@@ -25,7 +24,7 @@
               >
               <nuxt-link
                 class="doc-title"
-                :to="{ name: 'slug', params: { slug: item.fileName } }"
+                :to="{ name: 'slug', params: { slug: item.id } }"
                 >{{ item.attributes.title }}</nuxt-link
               >
             </div>
@@ -47,9 +46,7 @@
               :str="item.body.slice(0, 200)"
             ></MarkdownView>
             <div class="doc-readMore">
-              <nuxt-link
-                :to="{ name: 'slug', params: { slug: item.fileName } }"
-              >
+              <nuxt-link :to="{ name: 'slug', params: { slug: item.id } }">
                 <span>查看全文 <i class="iconfont icon-jiantou-you"></i></span>
               </nuxt-link>
             </div>

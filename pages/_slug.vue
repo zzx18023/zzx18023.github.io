@@ -25,16 +25,23 @@
         </div>
       </div>
     </div>
+    <div class="main-container">
+      <MarkdownView class="doc-content" :str="doc.body"></MarkdownView>
+      <div id="gitalk-container"></div>
+    </div>
     <!-- eslint-disable-next-line vue/no-v-html -->
     <!-- <div class="doc-content line-numbers" v-html="doc.html"></div> -->
-    <MarkdownView class="doc-content" :str="doc.body"></MarkdownView>
+
+    <!-- <div id="SOHUCS" :key="$route.params.slug" :sid="$route.params.slug"></div> -->
   </div>
 </template>
 
 <script>
 import dateformat from 'dateformat';
-// import htmlScoped from '~/mixins/html-scoped';
+import Gitalk from 'gitalk';
+import 'gitalk/dist/gitalk.css';
 import MarkdownView from '~/components/markdown-view';
+
 export default {
   name: 'Posts',
   filters: {
@@ -43,26 +50,34 @@ export default {
   components: { MarkdownView },
   computed: {
     doc() {
-      return this.$store.getters['docs/fileNameGetItem'](
-        this.$route.params.slug,
-      );
+      return this.$store.getters['docs/getItemById'](this.$route.params.slug);
     },
   },
+  mounted() {
+    const gitalk = new Gitalk({
+      clientID: 'd97041b044b200b8fb87',
+      clientSecret: '833a2e4ecb9971c3e289fbcb495780459102d370',
+      repo: 'blogtalk',
+      owner: 'zzx18023',
+      admin: ['zzx18023'],
+      id: this.$route.params.slug,
+      title: this.doc.attributes.title,
+      distractionFreeMode: true,
+    });
 
+    gitalk.render('gitalk-container');
+  },
   head() {
-    return Object.assign(
-      {
-        title: this.doc.attributes.title,
-        meta: [
-          {
-            hid: 'description',
-            name: 'description',
-            content: this.doc.attributes.description || '',
-          },
-        ],
-      },
-      // htmlScoped.head.call(this),
-    );
+    return Object.assign({
+      title: this.doc.attributes.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.doc.attributes.description || '',
+        },
+      ],
+    });
   },
 };
 </script>
@@ -103,7 +118,6 @@ export default {
     // right 0
     left 0
     width 100vw
-  // right 10%
 
 .banner-wrapper
   margin auto
@@ -137,12 +151,16 @@ export default {
   font-size 14px
 
 .doc-content
-  margin auto
-  margin-top 200px
-  padding 8px
-  max-width 1024px
+  // margin auto
+  // max-width 1024px
   // padding 0 20px
 
 .slug
   // margin-top 200px
+
+.main-container
+  margin auto
+  margin-top 200px
+  padding 8px
+  max-width 1024px
 </style>

@@ -119,7 +119,7 @@ export default {
         tr:nth-child(2n)
           background-color #F8F8F8
 
-    :not(pre) code
+    :not(pre)>code
       padding 3px
       border 1px solid #ddd
       border-radius 3px

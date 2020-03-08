@@ -153,13 +153,6 @@ export default {
           // top
           // animation nav-hover .3s
 
-          // @keyframes  nav-hover
-          //   from
-          //     width 0
-
-          //   to
-          //     width calc(100% + 10px)
-
     &.nuxt-link-exact-active
       >span
         // background-image linear-gradient(to right, #b2fefa, #0ed2f7, #0052d4)

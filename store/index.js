@@ -4,6 +4,7 @@ export const mutations = {};
 
 export const actions = {
   nuxtServerInit({ commit }) {
-    commit('docs/loadDocs');
+    // console.log(666);
+    // commit('docs/loadDocs');
   },
 };

@@ -68,6 +68,7 @@ export default {
     //     fix: true,
     //   },
     // ],
+    '@nuxtjs/style-resources',
   ],
   /*
    ** Nuxt.js modules
@@ -78,7 +79,6 @@ export default {
     // '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
-    '@nuxtjs/style-resources',
   ],
   /*
    ** Axios module configuration
@@ -138,7 +138,7 @@ export default {
     stylus: './assets/style/base.styl',
   },
   server: {
-    // port: 80,
+    port: 80,
     // port: 8000, // default: 3000
     host: '0.0.0.0', // default: localhost,
     timing: {
