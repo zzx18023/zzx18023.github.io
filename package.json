@@ -34,7 +34,7 @@
     "normalize.css": "^8.0.1",
     "nuxt": "^2.0.0",
     "prismjs": "^1.19.0",
-    "swiper": "^5.3.6",
+    "swiper": "^6.5.1",
     "vant": "^2.5.3",
     "vue-awesome-swiper": "^3.1.3"
   },
